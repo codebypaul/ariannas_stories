@@ -1,6 +1,7 @@
 .full-story{
     box-shadow: 0 2px 5px 5px rgba(200,200,200,1);
     border-radius: .5rem;
+    width: 95%;
 }
 .navbar{
     z-index: 1;
@@ -63,15 +64,28 @@ table{
     width: 100%;
 }
 
+@media screen and (min-width: 360px){
+    .home-login{
+        width: 80%;
+    }
+}
 @media screen and (min-width: 768px){
-    
+    .home-login{
+        width: 60%;
+    }
 }
 @media screen and (min-width: 1366px){
+    .home-login{
+        width: 30%;
+    }
     .slide{
         width: 50%
     }
     .story-card{
         width: 45%;
+    }
+    .full-story{
+        width: 80%;
     }
 }
 @media screen and (min-width: 1920px){
