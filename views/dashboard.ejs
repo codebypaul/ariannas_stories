@@ -1,0 +1,6 @@
+
+<% if(currentUser.admin) { %> 
+    <%- include('partials/_adminDash.ejs') %> 
+<% } else { %>
+    <%- include('partials/_userDash.ejs') %> 
+<% } %>  

@@ -1,0 +1,27 @@
+<div class="stoyr-container container d-flex flex-wrap p-5 mx-auto w-100">
+    <% stories.forEach(story=>{ %>
+        <div class="mx-3 story-card text-center d-flex flex-column justify-content-between p-3 my-4">
+            <a href="/<%= story._id %>">
+                <h5>
+                    <%= story.title %> 
+                </h5>
+            </a>
+            <div class="text-box">
+                <p>
+                    <%= story.body %> 
+                </p>
+            </div>
+            <div >
+                <hr class="mx-3">
+                <span>Likes : <%= story.likes %> </span> |
+                <span>Published On: <%= story.createdAt.toLocaleDateString() %></span>
+            </div>
+            <div>
+                <a href="/<%= story._id %>" class="btn btn-primary mt-3">Read More</a>
+            </div>
+        </div>
+    <% }) %>  
+</div>
+<% if (currentUser.admin) { %>
+    <%- include('partials/_addStoryBtn.ejs') %> 
+<% } %>

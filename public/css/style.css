@@ -1,0 +1,84 @@
+.full-story{
+    box-shadow: 0 2px 5px 5px rgba(200,200,200,1);
+    border-radius: .5rem;
+}
+.navbar{
+    z-index: 1;
+    box-shadow: 0 0 5px 5px rgba(150,150,150,1);
+    height: 4rem;
+    position: sticky;
+    top: 0;
+}
+
+.slide{
+    position: fixed;
+    width: 100%;
+    top: 4rem;
+    right: -100%;
+    transition: 1s linear all;
+    z-index: 2;
+    background: rgba(200,200,200,1);
+    border-radius: .5rem;
+}
+.slide.open{
+    right: 0;
+}
+
+.add-story{
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+.add-story-btn{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 4rem;
+}
+tr{
+    width: 100%;
+}
+.story-card{
+    box-shadow: 0 0 3px 3px rgba(200,200,200,1);
+    width: 100%;
+}
+.text-box{
+    max-height: 10rem;
+    overflow-y: scroll;
+    margin: 0 1rem;
+}
+
+.dark-toggle{
+    border: 1px solid black;
+    border-radius: .5rem;
+}
+
+body.dark{
+    background: rgba(0,0,0,1);
+    color: rgba(255,255,255,1);
+}
+table{
+    width: 100%;
+}
+
+@media screen and (min-width: 768px){
+    
+}
+@media screen and (min-width: 1366px){
+    .slide{
+        width: 50%
+    }
+    .story-card{
+        width: 45%;
+    }
+}
+@media screen and (min-width: 1920px){
+    .slide{
+        width: 50%
+    }
+    .story-card{
+        width: 30%
+    }
+}

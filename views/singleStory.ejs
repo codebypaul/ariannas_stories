@@ -1,0 +1,10 @@
+<div>
+    <div class="full-story mt-5 w-75 mx-auto p-5">
+        <h1><%= story.title %> </h1>
+        <p><%= story.body %> </p>
+        <form action="/likeStory" method="POST" class="mr-auto">
+            <input hidden type="text" name="story_id" value="<%= story._id%>">
+            <input type="submit" value="Like" class="btn btn-success">
+        </form>
+    </div>
+</div>

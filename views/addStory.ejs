@@ -1,0 +1,26 @@
+<div>
+    <h3>Add Story</h3>
+    <form action="/stories" method="POST" class="card w-75 mx-auto p-5">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select name="status">
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+                <option value="unpublised">Unpublished</option>
+            </select>
+        </div>
+        <input hidden type="text" name="user" value="<%= currentUser._id %>">
+        <div class="form-group">
+            <label for="">Tell your story :</label>
+            <textarea name="body" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+        <div class="form-group d-flex justify-content-between mt-3">
+            <input type="submit" value="Post Story" class="btn btn-success">
+            <a href="/dashboard" class="btn btn-warning">Cancel</a>
+        </div>
+    </form>
+</div>
