@@ -23,7 +23,12 @@ router.post('/stories',(req,res)=>{
 })
 
 router.get('/addStory',(req,res)=>{
-    res.render('addstory')
+    try{
+        res.render('addstory')
+    }catch (err) {
+        console.log(err);
+        res.render('500')
+    }
 })
 
 

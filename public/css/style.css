@@ -63,7 +63,10 @@ body.dark{
 table{
     width: 100%;
 }
-
+.new-story-card{
+    box-shadow: 0 0 3px 3px rgba(175,175,175,1);
+    width: 95%;
+}
 @media screen and (min-width: 360px){
     .home-login{
         width: 80%;
