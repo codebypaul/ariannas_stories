@@ -11,6 +11,7 @@ const commentSchema = new mongoose.Schema({
     },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
+        // type: String,
         ref: 'User'
     },
     createdAt: {
@@ -36,6 +37,7 @@ const StorySchema = new mongoose.Schema({
     },
     user:{
         type: mongoose.Schema.Types.ObjectId,
+        // type: String,
         ref: 'User'
     },
     likes:{

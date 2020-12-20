@@ -1,6 +1,10 @@
-const router = require('express').Router()
+const express = require('express')
+const router = express.Router()
 const { ensureAuth,ensureGuest } = require('../middleware/auth')
 const Story = require('../models/Story')
+const isAdmin = require('../middleware/isAdmin')
+
+router.use(express.static('public'))
 
 // desc main page where login in is immediately prompted
 // route /
@@ -12,8 +16,12 @@ router.get('/',ensureGuest,(req,res)=>{
 // router /dashboard
 router.get('/dashboard',ensureAuth, async (req,res)=>{
     try{
-        const stories = await Story.find({ user : req.user.id }).lean()
-        res.render('dashboard',{ stories })
+        if (req.user.admin){
+            const stories = await Story.find({ user : req.user.id }).lean()
+            res.render('dashboard',{ stories })
+        } else {
+            res.redirect('/stories')
+        }
     }catch(err){
         console.log(err);
         res.render('500')
@@ -27,7 +35,6 @@ router.get('/stories', async (req,res)=>{
         .populate('user')
         .sort({createdAt: 'desc'})
         .lean()
-    console.log(stories)
     res.render('stories',{ stories })
 })
 
@@ -43,12 +50,8 @@ router.post('/likeStory', async (req,res)=>{
     res.redirect(`/${req.body.story_id}`)
 })
 
-// desc logout if current user
-// route /logout
-router.get('/logout',(req,res)=>{
-    req.logout()
-    res.redirect('/')
-
+router.get('/page',(req,res)=>{
+    res.send('page working')
 })
 
 module.exports = router

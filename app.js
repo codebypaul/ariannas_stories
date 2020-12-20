@@ -16,13 +16,14 @@ connectDB()
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
+
 //express ejs layouts
 app.set('view engine','ejs')
 app.use(layouts)
 
-if (process.env.NODE_ENV === 'development'){
-    app.use(require('morgan')('dev'))
-}
+// if (process.env.NODE_ENV === 'development'){
+//     app.use(require('morgan')('dev'))
+// }
 
 const sessionObject = {
     secret: process.env.SECRET_SESSION,
@@ -48,17 +49,13 @@ app.use((req, res, next) => {
     next();
 });
 
-//Require public files before calling routes
 
-
-
-
-app.use('/',require('./controllers/index'),require('./controllers/stories'))
+app.use('/',require('./controllers/index'))
 app.use('/auth',require('./controllers/auth'))
+app.use('/stories',require('./controllers/stories'))
 
-app.use(express.static(__dirname + '/public'))
+const PORT = process.env.PORT || 4000
 
-const PORT = process.env.PORT || 5000
 app.listen(PORT,()=>{
     console.log(`You are connected to PORT : ${PORT}`);
 })

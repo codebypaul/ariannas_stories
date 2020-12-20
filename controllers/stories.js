@@ -1,7 +1,9 @@
-const router = require('express').Router()
+const express = require('express')
+const router = express.Router()
 const { ensureAuth } = require('../middleware/auth')
-const isAdmin = require('../middleware/isAdmin')
 const Story = require('../models/Story')
+
+router.use(express.static('public'))
 
 router.post('/stories',(req,res)=>{
     try{
@@ -21,7 +23,8 @@ router.post('/stories',(req,res)=>{
 })
 
 router.get('/addStory',(req,res)=>{
-    res.render('addStory')
+    res.render('addstory')
 })
+
 
 module.exports = router

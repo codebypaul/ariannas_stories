@@ -1,6 +1,35 @@
+<div class="p-3">
+    <h1>Welcome <%= currentUser.firstName %></h1>
+    <% if (stories.length === 0) {%>
+        <h2>No stories told...yet</h2>
+    <% } else { %>
+        <div class="full-story mx-auto p-5">
 
-<% if(currentUser.admin) { %> 
-    <%- include('partials/_adminDash.ejs') %> 
-<% } else { %>
-    <%- include('partials/_userDash.ejs') %> 
-<% } %>  
+        
+            <table class="mx-auto">
+                <tr>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            <% stories.forEach(story=>{ %>
+                <tr class="">
+                    <td><a href='/<%= story._id %>'><%= story.title %></a></td>
+                    <td><%= story.createdAt.toLocaleDateString() %> </td>
+                    <td class="">
+                        <%= story.status %>
+                    </td>
+                    <td>
+                        <!-- <form action="">
+                            <input hidden type="text" name="story_id" value="<%= //story._id %>">
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                        </form> -->
+                    </td>
+                </tr>
+                <% }) %>  
+            </table>
+        </div>
+    <% } %>   
+</div>
+<%- include('partials/_addStoryBtn.ejs') %> 
