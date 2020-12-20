@@ -47,12 +47,6 @@ router.get('/:id', async (req,res)=>{
 
 //
 //
-router.get('/test',(req,res)=>{
-    try{
-        res.send('test message')
-    } catch (err) {
-        console.log(err);
-    }
-})
+
 
 module.exports = router

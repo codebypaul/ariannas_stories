@@ -22,7 +22,7 @@ router.post('/stories',(req,res)=>{
     console.log()
 })
 
-router.get('/addStory',(req,res)=>{
+router.get('/addStory',ensureAuth,(req,res)=>{
     try{
         res.render('addstory')
     }catch (err) {
