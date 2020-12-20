@@ -21,9 +21,8 @@ app.use(express.json())
 app.set('view engine','ejs')
 app.use(layouts)
 
-if (process.env.NODE_ENV === 'development'){
-    app.use(require('morgan')('dev'))
-}
+app.use(require('morgan')('dev'))
+
 
 const sessionObject = {
     secret: process.env.SECRET_SESSION,
