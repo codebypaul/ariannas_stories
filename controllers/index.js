@@ -38,20 +38,21 @@ router.get('/stories', async (req,res)=>{
     res.render('stories',{ stories })
 })
 
+//
+//
 router.get('/:id', async (req,res)=>{
     const story = await Story.findOne({ _id:req.params.id })
     res.render('singleStory',{ story })
 })
 
-router.post('/likeStory', async (req,res)=>{
-    let story = await Story.findOne({_id:req.body.story_id})
-    story.likes++
-    story.save()
-    res.redirect(`/${req.body.story_id}`)
-})
-
-router.get('/page',(req,res)=>{
-    res.send('page working')
+//
+//
+router.get('/test',(req,res)=>{
+    try{
+        res.send('test message')
+    } catch (err) {
+        console.log(err);
+    }
 })
 
 module.exports = router

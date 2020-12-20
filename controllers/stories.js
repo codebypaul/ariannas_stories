@@ -31,5 +31,12 @@ router.get('/addStory',(req,res)=>{
     }
 })
 
+router.post('/likeStory', async (req,res)=>{
+    let story = await Story.findOne({_id:req.body.story_id})
+    story.likes++
+    story.save()
+    res.redirect(`/${req.body.story_id}`)
+})
+
 
 module.exports = router
