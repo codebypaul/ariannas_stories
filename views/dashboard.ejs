@@ -15,7 +15,7 @@
                 </tr>
             <% stories.forEach(story=>{ %>
                 <tr class="">
-                    <td><a href='/<%= story._id %>'><%= story.title %></a></td>
+                    <td><a href='stories/<%= story._id %>'><%= story.title %></a></td>
                     <td><%= story.createdAt.toLocaleDateString() %> </td>
                     <td class="">
                         <%= story.status %>

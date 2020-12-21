@@ -5,6 +5,8 @@ const Story = require('../models/Story')
 
 router.use(express.static('public'))
 
+// desc Post new story
+// route POST /stories/stories
 router.post('/stories',(req,res)=>{
     try{
         const newStory = new Story({
@@ -22,6 +24,22 @@ router.post('/stories',(req,res)=>{
     console.log()
 })
 
+// desc Update Story
+// route PUT /stories/:id
+router.post('/edit',async (req,res)=>{
+    console.log(req.body);
+    // const story = await Story.findOne({_id:req.body.story_id})
+    res.redirect('/dashboard')
+})
+// desc render story edit form
+// route /stories/edit/:id
+router.get('/:id',async (req,res)=>{
+    const story = await Story.findOne({_id:req.params.id})
+    res.render('editStory', { story })
+})
+
+// desc Display create story form
+// router GET /stories/addStory
 router.get('/addStory',ensureAuth,(req,res)=>{
     try{
         res.render('addStory')
@@ -31,6 +49,8 @@ router.get('/addStory',ensureAuth,(req,res)=>{
     }
 })
 
+// desc Add a like to a post with put request
+// route PUT /stories/likeStory
 router.post('/likeStory', async (req,res)=>{
     let story = await Story.findOne({_id:req.body.story_id})
     story.likes++
