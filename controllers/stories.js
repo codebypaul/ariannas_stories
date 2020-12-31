@@ -26,16 +26,24 @@ router.post('/stories',(req,res)=>{
 
 // desc Update Story
 // route PUT /stories/:id
-router.post('/edit',async (req,res)=>{
-    console.log(req.body);
-    // const story = await Story.findOne({_id:req.body.story_id})
-    res.redirect('/dashboard')
+router.put('/edit', async (req,res)=>{
+    try{
+        const story = await Story.findOne({_id:req.body.story_id})
+        story.title = req.body.title
+        story.status = req.body.status
+        story.body = req.body.body
+        story.save()
+        res.redirect('/dashboard')
+    }catch(err){
+        console.log(err);
+        res.render('500')
+    }
 })
 // desc render story edit form
 // route /stories/edit/:id
 router.get('/:id',async (req,res)=>{
     const story = await Story.findOne({_id:req.params.id})
-    res.render('editStory', { story })
+    res.render('editStory',{story})
 })
 
 // desc Display create story form
@@ -58,5 +66,15 @@ router.post('/likeStory', async (req,res)=>{
     res.redirect(`/${req.body.story_id}`)
 })
 
-
+// 
+// 
+router.delete('/delete', async (req,res)=>{
+    try{
+        console.log(req.body);
+        const story = await Story.findOneAndDelete({_id:req.body.story_id})
+        res.redirect('/dashboard')
+    }catch(err){
+        console.log(err);
+    }
+})
 module.exports = router

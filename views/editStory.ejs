@@ -1,5 +1,6 @@
 <form action="/stories/edit" method="POST" class="new-story-card mx-auto mt-5 p-5">
-    <input hidden type="text" name="story_id" value="<%= story._id%> ">
+    <input hidden type="text" name="_method" value="PUT">
+    <input hidden type="text" name="story_id" value="<%= story._id%>">
     <div class="form-group">
         <label for="">Title</label>
         <input class="form-control" type="text" name="title" value="<%= story.title %>">
