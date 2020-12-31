@@ -41,7 +41,7 @@ router.put('/edit', async (req,res)=>{
 })
 // desc render story edit form
 // route /stories/edit/:id
-router.get('/:id',async (req,res)=>{
+router.get('/edit:id',async (req,res)=>{
     const story = await Story.findOne({_id:req.params.id})
     res.render('editStory',{story})
 })
