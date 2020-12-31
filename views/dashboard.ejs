@@ -15,16 +15,17 @@
                 </tr>
             <% stories.forEach(story=>{ %>
                 <tr class="">
-                    <td><a href='/<%= story._id %>'><%= story.title %></a></td>
+                    <td><a href='stories/<%= story._id %>'><%= story.title %></a></td>
                     <td><%= story.createdAt.toLocaleDateString() %> </td>
                     <td class="">
                         <%= story.status %>
                     </td>
                     <td>
-                        <!-- <form action="">
-                            <input hidden type="text" name="story_id" value="<%= //story._id %>">
-                            <input type="submit" value="Delete" class="btn btn-danger">
-                        </form> -->
+                        <form action="/stories/delete" method="POST">
+                            <input hidden type="text" name="story_id" value="<%= story._id %>">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="submit" value="Delete" class="btn-outline-danger">
+                        </form>
                     </td>
                 </tr>
                 <% }) %>  
