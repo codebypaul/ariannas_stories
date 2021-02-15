@@ -45,8 +45,5 @@ router.get('/:id', async (req,res)=>{
     res.render('singleStory',{ story })
 })
 
-//
-//
-
 
 module.exports = router

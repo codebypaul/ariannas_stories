@@ -1,141 +1,141 @@
-.full-story{
-    box-shadow: 0 2px 5px 5px rgba(200,200,200,1);
-    border-radius: .5rem;
-    width: 95%;
+.full-story {
+  box-shadow: 0 2px 5px 5px rgba(200, 200, 200, 1);
+  border-radius: 0.5rem;
+  width: 95%;
 }
-.navbar{
-    z-index: 1;
-    box-shadow: 0 0 5px 5px rgba(150,150,150,1);
-    height: 4rem;
-    position: sticky;
-    top: 0;
-    background: rgb(213,190,217);
-    
-}
-
-.navbar a{
-    text-decoration: none;
+.navbar {
+  z-index: 1;
+  box-shadow: 0 0 5px 5px rgba(150, 150, 150, 1);
+  height: 4rem;
+  position: sticky;
+  top: 0;
+  background: rgb(213, 190, 217);
+  display: flex;
+  align-items: center;
 }
 
-.navbar h6{
-    font-size: 2rem;
-    color: rgba(225,225,225,1);
+.navbar a {
+  text-decoration: none;
 }
 
-.menu-btn{
-    color: rgba(225,225,225,1);
+.site-logo {
+  width: 6rem;
 }
 
-.slide{
-    position: fixed;
-    width: 100%;
-    top: 4rem;
-    right: -100%;
-    transition: 1s linear all;
-    z-index: 2;
-    background: rgba(200,200,200,1);
-    border-radius: .5rem;
+.menu-btn {
+  color: rgba(225, 225, 225, 1);
 }
 
-.slide.open{
-    right: 0;
+.slide {
+  position: fixed;
+  width: 100%;
+  top: 4rem;
+  right: -100%;
+  transition: 1s linear all;
+  z-index: 2;
+  background: rgba(200, 200, 200, 1);
+  border-radius: 0.5rem;
 }
 
-.add-story{
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-}
-.add-story-btn{
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 4rem;
-    width: 4rem;
+.slide.open {
+  right: 0;
 }
 
-tr{
-    width: 100%;
+.add-story {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+.add-story-btn {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 4rem;
 }
 
-.story-card{
-    box-shadow: 0 0 3px 3px rgba(200,200,200,1);
-    width: 100%;
-    position: relative;
+tr {
+  width: 100%;
 }
 
-.text-box{
-    max-height: 10rem;
-    overflow-y: scroll;
-    margin: 0 1rem;
+.story-card {
+  box-shadow: 0 0 3px 3px rgba(200, 200, 200, 1);
+  width: 100%;
+  position: relative;
 }
 
-.dark-toggle{
-    border: 1px solid black;
-    border-radius: .5rem;
+.text-box {
+  max-height: 10rem;
+  overflow-y: scroll;
+  margin: 0 1rem;
 }
 
-body{
-    transition: .5s linear all;
+.dark-toggle {
+  border: 1px solid black;
+  border-radius: 0.5rem;
 }
 
-body.dark{
-    background: rgba(0,0,0,1);
-    color: rgba(255,255,255,1);
+body {
+  transition: 0.5s linear all;
 }
 
-table{
-    width: 100%;
+body.dark {
+  background: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
 }
 
-.new-story-card{
-    box-shadow: 0 0 3px 3px rgba(175,175,175,1);
-    width: 95%;
+table {
+  width: 100%;
 }
 
-.edit-btn{
-    position: absolute;
-    top: -1em;
-    right: -1em;
-    background: rgb(0,123,255);
-    color: white;
+.new-story-card {
+  box-shadow: 0 0 3px 3px rgba(175, 175, 175, 1);
+  width: 95%;
 }
 
-.edit-btn:hover{
-    background: rgba(0,123,255,1);
-    color: black;
+.edit-btn {
+  position: absolute;
+  top: -1em;
+  right: -1em;
+  background: rgb(0, 123, 255);
+  color: white;
 }
 
-@media screen and (min-width: 360px){
-    .home-login{
-        width: 80%;
-    }
+.edit-btn:hover {
+  background: rgba(0, 123, 255, 1);
+  color: black;
 }
-@media screen and (min-width: 768px){
-    .home-login{
-        width: 60%;
-    }
+
+@media screen and (min-width: 360px) {
+  .home-login {
+    width: 80%;
+  }
 }
-@media screen and (min-width: 1366px){
-    .home-login{
-        width: 30%;
-    }
-    .slide{
-        width: 50%
-    }
-    .story-card{
-        width: 45%;
-    }
-    .full-story{
-        width: 80%;
-    }
+@media screen and (min-width: 768px) {
+  .home-login {
+    width: 60%;
+  }
 }
-@media screen and (min-width: 1920px){
-    .slide{
-        width: 50%
-    }
-    .story-card{
-        width: 30%
-    }
+@media screen and (min-width: 1366px) {
+  .home-login {
+    width: 30%;
+  }
+  .slide {
+    width: 50%;
+  }
+  .story-card {
+    width: 45%;
+  }
+  .full-story {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .slide {
+    width: 50%;
+  }
+  .story-card {
+    width: 30%;
+  }
 }
