@@ -36,7 +36,9 @@
   background: rgba(200, 200, 200, 1);
   border-radius: 0.5rem;
 }
-
+.home-logo {
+  width: 100%;
+}
 .slide.open {
   right: 0;
 }
@@ -116,6 +118,9 @@ table {
   .home-login {
     width: 60%;
   }
+  .home-logo {
+    width: 50%;
+  }
 }
 @media screen and (min-width: 1366px) {
   .home-login {
@@ -129,6 +134,9 @@ table {
   }
   .full-story {
     width: 80%;
+  }
+  .home-logo {
+    width: 40%;
   }
 }
 @media screen and (min-width: 1920px) {
