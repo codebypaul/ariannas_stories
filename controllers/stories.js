@@ -6,8 +6,8 @@ const Story = require('../models/Story')
 router.use(express.static('public'))
 
 // desc Post new story
-// route POST /stories/stories
-router.post('/stories',(req,res)=>{
+// route POST /stories
+router.post('/',(req,res)=>{
     try{
         const newStory = new Story({
             title: req.body.title,
