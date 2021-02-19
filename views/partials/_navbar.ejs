@@ -3,17 +3,17 @@
         <img class="site-logo" src="images/IMG_2967.PNG" alt="">
     </a>
     <% if (currentUser) { %>
-        <div class="slide">
+        <div class="slide p-2">
             <div class="d-flex justify-content-around">
-                <a href="/stories" class="btn">
+                <a href="/stories" class="btn btn-outline-secondary px-5">
                     Stories
                 </a>
                 <% if (currentUser.admin) { %>
-                    <a href="/dashboard" class="btn">
+                    <a href="/dashboard" class="btn btn-outline-secondary px-5">
                         Dashboard
                     </a>    
                 <% } %> 
-                <a href="/auth/logout" class="btn">
+                <a href="/auth/logout" class="btn btn-outline-secondary px-5">
                     Logout
                 </a>
             </div>
